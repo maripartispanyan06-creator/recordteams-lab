@@ -15,11 +15,11 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             int c = sc.nextInt();
             switch (c) {
-                case 1: Competitions.fillList(); break;
-                case 2: Competitions.printList(); break;
-                case 3: Competitions.winnerList(); break;
-                case 4: Competitions.winner(); break;
-                case 5: Competitions.sortTeams(); break;
+                case 1: TeamsService.fillList(); break;
+                case 2: TeamsService.printList(); break;
+                case 3: TeamsService.winnerList(); break;
+                case 4: TeamsService.winner(); break;
+                case 5: TeamsService.sortTeams(); break;
                 default: break cycle;
             }
 
