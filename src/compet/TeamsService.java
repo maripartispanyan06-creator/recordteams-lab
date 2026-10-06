@@ -20,6 +20,7 @@ public class TeamsService {
             new Competitions("China", "tennis", 11),
             new Competitions("China", "figure skating", 14),
     };
+
     public static void printList(){
         for (Competitions c: compets) System.out.println(c);
     }
