@@ -3,6 +3,23 @@ package compet;
 import java.util.Scanner;
 
 public class TeamsService {
+    private static Competitions[] compets = {
+            new Competitions("Russia", "futbol", 10),
+            new Competitions("Russia", "figure skating", 13),
+            new Competitions("Russia", "tennis", 18),
+            new Competitions("Armenia", "futbol", 15),
+            new Competitions("Armenia", "tennis", 13),
+            new Competitions("Armenia", "figure skating", 11),
+            new Competitions("Argentina", "tennis", 14),
+            new Competitions("Argentina", "futbol", 17),
+            new Competitions("Argentina", "figure skating", 6),
+            new Competitions("Spain", "figure skating", 9),
+            new Competitions("Spain", "tennis", 12),
+            new Competitions("Spain", "futbol", 18),
+            new Competitions("China", "futbol", 12),
+            new Competitions("China", "tennis", 11),
+            new Competitions("China", "figure skating", 14),
+    };
     public static void printList(){
         for (Competitions c: compets) System.out.println(c);
     }
