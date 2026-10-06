@@ -35,4 +35,41 @@ public class TeamsService {
             );
         }
     }
+    public static void winner() {
+        int winnerIndex = 0;
+        int maxScore = 0;
+        for (int i = 0; i < compets.length; i++) {
+            boolean alreadySeen = false;
+            for (int j = 0; j < i; j++) {
+                if (compets[i].getName().equals(compets[j].getName())) {
+                    alreadySeen = true;
+                    break;
+                }
+            }
+
+            if (alreadySeen) {
+                continue;
+            }
+
+            int totalScore = 0;
+
+            for (int j = 0; j < compets.length; j++) {
+                if (compets[i].getName().equals(compets[j].getName())) {
+                    totalScore += compets[j].getScore();
+                }
+            }
+            if (totalScore > maxScore) {
+                maxScore = totalScore;
+                winnerIndex = i;
+            }
+        }
+
+        System.out.println("\nWinner of the overall competition:");
+        System.out.println(
+                compets[winnerIndex].getName()
+                        + " - "
+                        + maxScore
+                        + " points"
+        );
+    }
 }
