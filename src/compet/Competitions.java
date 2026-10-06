@@ -77,9 +77,7 @@ public class Competitions {
             new Competitions("China", "figure skating", 14),
     };
 
-    public static void printList(){
-        for (Competitions c: compets) System.out.println(c);
-    }
+
     public static void fillList() {
         System.out.println("how many teams do you wanna write?");
         Scanner sc = new Scanner(System.in);
