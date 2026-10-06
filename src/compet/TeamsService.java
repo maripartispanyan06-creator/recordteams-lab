@@ -1,5 +1,7 @@
 package compet;
 
+import java.util.Scanner;
+
 public class TeamsService {
     public static void printList(){
         for (Competitions c: compets) System.out.println(c);
@@ -137,6 +139,15 @@ public class TeamsService {
                             + totalScores[i]
                             + " points"
             );
+        }
+    }
+    public static void fillList() {
+        System.out.println("how many teams do you wanna write?");
+        Scanner sc = new Scanner(System.in);
+        int nom = sc.nextInt();
+        compets = new Competitions[nom];
+        for (int i = 0; i < compets.length; i++) {
+            compets[i] = new Competitions();
         }
     }
 }

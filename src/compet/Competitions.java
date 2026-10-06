@@ -78,15 +78,7 @@ public class Competitions {
     };
 
 
-    public static void fillList() {
-        System.out.println("how many teams do you wanna write?");
-        Scanner sc = new Scanner(System.in);
-        int nom = sc.nextInt();
-        compets = new Competitions[nom];
-        for (int i = 0; i < compets.length; i++) {
-            compets[i] = new Competitions();
-        }
-    }
+
 
 
 
