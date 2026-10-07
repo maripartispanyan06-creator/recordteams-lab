@@ -191,4 +191,77 @@ public class TeamsService {
             if (!seen) countTeam++;
         }
     }
+    public static void deleteTeam(){
+        System.out.println("which teams do you want to delete?");
+        Scanner sc = new Scanner(System.in);
+        String teamDelete = sc.nextLine();
+        int teamCount = 0;
+        int teamDeleteCount = 0;
+        for (int i = 0; i < compets.length; i++) {
+            boolean alreadySeen = false;
+            for (int j = 0; j < i; j++) {
+                if (compets[i].getName().equals(teamDelete)) {
+                    alreadySeen = true;
+                    break;
+                }
+            }
+
+            if (!alreadySeen) {
+                teamDeleteCount++;
+            }
+        }
+        for (int i = 0; i < compets.length; i++) {
+            boolean alreadySeen = false;
+            for (int j = 0; j < i; j++) {
+                if (compets[i].getName().equals(compets[j].getName())) {
+                    alreadySeen = true;
+                    break;
+                }
+            }
+
+            if (!alreadySeen) {
+                teamCount++;
+            }
+        }
+        String[] teams = new String[teamCount];
+        int[] totalScores = new int[teamCount];
+
+        int index = 0;
+        for (int i = 0; i < compets.length; i++) {
+            boolean alreadySeen = false;
+            for (int j = 0; j < i; j++) {
+                if (compets[i].getName().equals(compets[j].getName())) {
+                    alreadySeen = true;
+                    break;
+                }
+            }
+
+            if (!alreadySeen) {
+                teams[index] = compets[i].getName();
+                for (int j = 0; j < compets.length; j++) {
+                    if (compets[i].getName().equals(compets[j].getName())) {
+                        totalScores[index] += compets[j].getScore();
+                    }
+                }
+
+                index++;
+            }
+        }
+        for (int i = 0; i < teamCount; i++){
+            if (compets[i].getName().equals(teamDelete)) {
+                String tempTeam = teams[i];
+                teams[i] = teams[teamCount - 1];
+                teams[teamCount - 1] = tempTeam;
+                int tempScore = totalScores[i];
+                totalScores[i] = totalScores[teamCount - 1];
+                totalScores[teamCount - 1] = tempScore;
+
+                teamCount--;
+                break;
+            }
+        }
+        for (int i=0; i < teamCount; i++) {
+            System.out.println(teams[i] + ":" + totalScores[i]);
+        }
+    }
 }
