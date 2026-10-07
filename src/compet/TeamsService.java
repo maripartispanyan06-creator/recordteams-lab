@@ -178,4 +178,17 @@ public class TeamsService {
             }
         }
     }
+    public static void countTeams(){
+        int countTeam = 0;
+        for (int i = 0; i < compets.length; i++){
+            boolean seen = false;
+            for (int j = 0; j < i; j++) {
+                if (compets[i].getName().equals(compets[j].getName())) {
+                    seen = true;
+                    break;
+                }
+            }
+            if (!seen) countTeam++;
+        }
+    }
 }
