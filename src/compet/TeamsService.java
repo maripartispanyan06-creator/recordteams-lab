@@ -168,4 +168,14 @@ public class TeamsService {
             compets[i] = new Competitions();
         }
     }
+    public static void findByName(){
+        System.out.println("input team's name for find");
+        Scanner sc = new Scanner(System.in);
+        String findname = sc.nextLine();
+        for (int i = 0; i < compets.length; i++) {
+            if (compets[i].getName().equals(findname)) {
+                System.out.println(compets[i]);
+            }
+        }
+    }
 }
