@@ -168,7 +168,7 @@ public class TeamsService {
             compets[i] = new Competitions();
         }
     }
-    public static void findByName(){
+    public static void searchByName(){
         System.out.println("input team's name for find");
         Scanner sc = new Scanner(System.in);
         String findname = sc.nextLine();
