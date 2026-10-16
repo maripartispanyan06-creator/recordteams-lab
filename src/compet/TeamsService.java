@@ -19,6 +19,7 @@ public class TeamsService {
             new Competitions("China", "futbol", 12),
             new Competitions("China", "tennis", 11),
             new Competitions("China", "figure skating", 14),
+            new Competitions("France", "figure skating", 14),
     };
 
     public static void printList(){
