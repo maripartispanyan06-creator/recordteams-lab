@@ -12,6 +12,10 @@ public class Competitions {
         return String.format("Name is %s, type is %s, score is %d",this.name, this.type, this.score);
     }
 
+
+
+
+
     public String getName(){
         return this.name;
     }
